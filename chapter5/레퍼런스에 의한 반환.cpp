@@ -1,30 +1,23 @@
-//컴퓨터공학전공 20200675
-/*#include <iostream>
-#include <cstring>
+//컴퓨터공학전공 20200675 문서연
+#include <iostream>
 
-char& print_string(char* n, int s, int r);
+char& find(char n[], int index);
 
 int main(void)
 {
-	char name[] = "문서연";
-	int size = 10;
-	int repeat = 10;
-
-	//return by reference (매개변수를 그대로 반환)
+	//첫번째 문자 바꾸기
 	std::cout << "3. return by reference" << std::endl << std::endl;
-	std::cout << name << ". " << repeat << "번 출력 시작..." << std::endl;
-	std::cout << print_string(name, size, repeat) << '. ' << repeat << "번 출력 끝..." << std::endl;
+
+	char name[] = "Mike";
+	std::cout << name << std::endl;
+
+	find(name, 0) = 'S';
+
+	std::cout << name << std::endl;
 
 	return 0;
 }
-char& print_string(char* n, int s, int r)
+char& find(char n[], int index)
 {
-	for (int i = 0; i < r; i++) {
-		std::cout << i+1 << ": ";
-		for (int k = 0; k < (int)strlen(n); k++) {
-			std::cout << n[k];
-		}
-		std::cout << std::endl;
-	}
-	return n;
-}*/
+	return n[index];
+}
