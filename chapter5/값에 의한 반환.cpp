@@ -1,5 +1,5 @@
 //컴퓨터공학전공 20200675
-/*#include <iostream>
+#include <iostream>
 int exchange_add(int& a, int& b);
 int main(void)
 {
@@ -26,4 +26,4 @@ int exchange_add(int& a, int& b)
 	b = temp;
 
 	return a + b;
-}*/
+}

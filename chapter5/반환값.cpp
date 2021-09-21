@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstdlib>
 #include <cstring>
 
@@ -102,4 +102,4 @@ char& print_string(char* n, int s, int r)
 		std::cout << std::endl;
 	}
 	return *n;
-}
+}*/

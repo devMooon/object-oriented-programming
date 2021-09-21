@@ -1,6 +1,5 @@
 //컴퓨터공학전공 20200675
-/*#include <iostream>
-#include <cstdlib>
+#include <iostream>
 
 int* select_sort(int* numbers, int size);
 void print(int* p, int n);
@@ -28,7 +27,7 @@ int* select_sort(int* n, int size)
 	int min;
 	int tmp;
 
-	pi = (int*)malloc(sizeof(int)*size);
+	pi = new int[size];
 
 	for (int i = 0; i < size; i++) {
 		pi[i] = n[i];
@@ -53,4 +52,4 @@ void print(int* p, int n)
 		std::cout << p[i] << ' ';
 	}
 	std::cout << std::endl;
-}*/
+}
