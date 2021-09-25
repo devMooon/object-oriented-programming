@@ -1,3 +1,4 @@
+#include <iostream>
 #include "FruitSeller.h"
 #include "FruitBuyer.h"
 
@@ -12,10 +13,15 @@ int main(void)
 	buyer.numOfApple = 0;
 	buyer.money = 5000;
 
-	buyer.buyApple(seller.saleApple(2000));
+	buyer.buyApple(seller, 2000);
 
+	std::cout << "seller : " << std::endl;
 	seller.showResult();
-	buyer.showStatus();
+
+	std::cout << std::endl;
+
+	std::cout << "buyer : " << std::endl;
+	buyer.showResult();
 
 	return 0;
 }

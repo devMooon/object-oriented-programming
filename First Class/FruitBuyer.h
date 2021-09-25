@@ -1,3 +1,6 @@
+#include <string>
+#include "FruitSeller.h"
+
 #ifndef _FruitBuyer_h
 #define _FruitBuyer_h
 
@@ -6,8 +9,8 @@ public :
 	int numOfApple;
 	int money;
 
-	int buyApple(int);
-	void showStatus(void);
+	void buyApple(FruitSeller&, int);
+	void showResult(void);
 };
 
 #endif //_FruitBuyer_h

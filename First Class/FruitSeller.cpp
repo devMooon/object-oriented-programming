@@ -6,6 +6,7 @@ int FruitSeller::saleApple(int m)
 	const int APPLE_PRICE = 1000;
 
 	int num = m / APPLE_PRICE;
+
 	numOfApple -= num;
 	money += m;
 
