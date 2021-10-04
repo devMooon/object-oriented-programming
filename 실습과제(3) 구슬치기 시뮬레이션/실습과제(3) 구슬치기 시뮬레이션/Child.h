@@ -1,8 +1,9 @@
+//컴퓨터공학전공 20200675 문서연
 #ifndef _Child_h
 #define _Child_h
+
 class Child {
 	int bead;
-
 
 public:
 	Child(void);

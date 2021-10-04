@@ -1,3 +1,4 @@
+//컴퓨터공학전공20200675문서연
 #ifndef _Point_h
 #define _Point_h
 

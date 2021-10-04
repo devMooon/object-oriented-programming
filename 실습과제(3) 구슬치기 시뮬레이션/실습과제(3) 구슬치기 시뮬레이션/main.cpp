@@ -1,3 +1,4 @@
+//컴퓨터공학전공 20200675 문서연
 #include "Child.h"
 #include <iostream>
 
@@ -9,12 +10,16 @@ int main(void)
 	Child c2(9);
 
 	showGame(c1, c2, 0);
+
 	c1.win(&c2, 2);
 	showGame(c1, c2, 1);
+
 	c2.win(&c1, 7);
 	showGame(c1, c2, 2);
+
 	c2.lose(&c1, 15);
 	showGame(c1, c2, 3);
+
 	c1.lose(&c2, 3);
 	showGame(c1, c2, 4);
 }

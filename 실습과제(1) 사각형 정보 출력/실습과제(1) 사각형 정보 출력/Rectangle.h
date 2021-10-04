@@ -1,6 +1,7 @@
 #include "Point.h"
 
 #ifndef _Rectangle_h
+//컴퓨터공학전공20200675문서연
 #define _Rectangle_h
 
 class Rectangle {

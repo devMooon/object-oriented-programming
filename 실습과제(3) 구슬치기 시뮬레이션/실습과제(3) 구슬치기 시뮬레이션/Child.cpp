@@ -1,3 +1,4 @@
+//컴퓨터공학전공 20200675 문서연
 #include "Child.h"
 #include <iostream>
 
@@ -27,7 +28,7 @@ void Child::showInfo(void) const
 };
 void Child::win(Child *loser, int bead)
 {
-	int beadNum;
+	int beadNum; //실제 뺏기는 값
 	if (loser->setBead(loser->getBead() - bead)) {
 		beadNum = bead;
 	}

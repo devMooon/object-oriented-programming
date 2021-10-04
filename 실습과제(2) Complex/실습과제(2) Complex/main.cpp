@@ -1,31 +1,27 @@
+//컴퓨터공학전공 20200675 문서연
 #include <iostream>
 #include "Complex.h"
 
 void InputComplex(Complex*);
 void InputComplex(Complex&);
-//Complex& InputComplex(Complex&); //반환 형식만으로만 구분되는 함수를 오버로드할 수 없습니다.
-
+Complex& InpAndRetComplex(Complex&);
 Complex AddComplex(Complex&, Complex&);
 
 int main(void)
 {
-	Complex c1;
-	Complex& cr1 = c1;
+	Complex c1, c2, c3, c4;
+	
 	InputComplex(&c1);
 	c1.ShowComplex();
 
-	//레퍼런스 값을 넘겨줄 때 포인터처럼 한번에 넘겨줄 순 없을까?
-	Complex c2;
-	Complex& cr2 = c2;
-	InputComplex(cr2);
+	InputComplex(c2);
 	c2.ShowComplex();
 
-	Complex c3 = AddComplex(cr1, cr2);
-	c3.ShowComplex();
+	Complex& cr = InpAndRetComplex(c3);
+	cr.ShowComplex();
 
-	//3번 InputComplex함수 테스트
-	//Complex& cr2 = InputComplex(cr);
-	//cr2.ShowComplex();
+	c4 = AddComplex(c1, c2);
+	c4.ShowComplex();
 
 	return 0;
 }
@@ -36,7 +32,6 @@ void InputComplex(Complex* c)
 	double image; //허수부값
 	std::cout << "실수부값 : ";
 	std::cin >> real;
-
 	std::cout << "허수부값 : ";
 	std::cin >> image;
 	
@@ -55,22 +50,20 @@ void InputComplex(Complex& cr)
 
 	cr.SetComplex(real, image);
 }
-/*Complex& InputComplex(Complex& cr)
+Complex& InpAndRetComplex(Complex& cr)
 {
 	std::cout << "3. Complex& InputComplex(Complex&);" << std::endl;
 	double real; //실수부값
 	double image; //허수부값
 	std::cout << "실수부값 : ";
 	std::cin >> real;
-
 	std::cout << "허수부값 : ";
 	std::cin >> image;
 
 	cr.SetComplex(real, image);
-	Complex& cr2 = cr;
 
-	return cr2;
-}*/
+	return cr;
+}
 
 Complex AddComplex(Complex& cr1, Complex& cr2)
 {
