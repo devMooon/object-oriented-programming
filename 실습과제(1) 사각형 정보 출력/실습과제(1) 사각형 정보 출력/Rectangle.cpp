@@ -22,44 +22,8 @@ Rectangle::Rectangle(Point p1, Point p2)
 	rb = p2;
 };
 
-Point Rectangle::getLt(void) const
+void Rectangle::show(void)
 {
-	return lt;
-};
-Point Rectangle::getRb(void) const
-{
-	return rb;
-};
-void Rectangle::setLt(Point lt)
-{
-	Rectangle::lt = lt;
-};
-void Rectangle::setRb(Point rb)
-{
-	Rectangle::rb = rb;
-};
-
-void Rectangle::show(Rectangle r)
-{
-	Point lt = r.getLt();
-	lt.show(lt);
-	Point rb = r.getRb();
-	rb.show(rb);
-};
-
-int Rectangle::width(Rectangle r) const
-{
-	return r.rb.getX() - r.lt.getX();
-};
-int Rectangle::height(Rectangle r)
-{
-	return r.rb.getY() - r.lt.getY();
-};
-int Rectangle::area(Rectangle r)
-{
-	return r.width(r) * r.height(r);
-};
-int Rectangle::round(Rectangle r)
-{
-	return 2 * (r.width(r) + r.height(r));
+	getLt().show();
+	getRb().show();
 };

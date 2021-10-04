@@ -7,14 +7,7 @@ Point::Point(void)
 Point::Point(int x, int y)
 	: x(x), y(y) {};
 
-int Point::getX(void) const
-{
-	return x;
-};
-int Point::getY(void) const
-{
-	return y;
-};
+
 void Point::setX(int x)
 {
 	if (x >= 0 && x <= 100) {
@@ -33,7 +26,7 @@ void Point::setY(int y)
 		std::cout << "error!! : ÁÂÇ¥°ª ¹üÀ§ 0~100." << std::endl;
 	}
 };
-void Point::show(Point p) const
+void Point::show(void) const
 {
-	std::cout << "ÁÂÇ¥ : (" << p.getX() << ", " << p.getY() << ")" << std::endl;
+	std::cout << "ÁÂÇ¥ : (" << getX() << ", " << getY() << ")" << std::endl;
 };

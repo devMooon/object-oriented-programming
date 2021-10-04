@@ -10,11 +10,11 @@ public:
 	Point(int x, int y);
 
 public:
-	int getX(void) const;
-	int getY(void) const;
+	inline int getX(void) const { return x; };
+	inline int getY(void) const { return y; };
 	void setX(int x);
 	void setY(int y);
-	void show(Point p) const;
+	void show(void) const;
 };
 
-#endif _Point_h
+#endif //_Point_h

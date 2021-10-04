@@ -8,12 +8,12 @@ int main(void)
 	Point p2(10, 10);
 
 	Rectangle r(p1, p2);
-	r.show(r);
+	r.show();
 
-	std::cout << "¹Øº¯ : " << r.width(r) << std::endl;
-	std::cout << "³ôÀÌ : " << r.height(r) << std::endl;
-	std::cout << "µÑ·¹ : " << r.round(r) << std::endl;
-	std::cout << "³ÐÀÌ : " << r.area(r) << std::endl;
+	std::cout << "¹Øº¯ : " << r.getWidth() << std::endl;
+	std::cout << "³ôÀÌ : " << r.getHeight() << std::endl;
+	std::cout << "µÑ·¹ : " << r.getRound() << std::endl;
+	std::cout << "³ÐÀÌ : " << r.getArea() << std::endl;
 
 	return 0;
 }

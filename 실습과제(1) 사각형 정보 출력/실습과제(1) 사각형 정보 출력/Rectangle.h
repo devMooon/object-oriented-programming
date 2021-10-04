@@ -4,7 +4,8 @@
 #define _Rectangle_h
 
 class Rectangle {
-	Point lt, rb; //좌측상단 꼭지점, 우측하단 꼭지점
+	Point lt; //좌측상단 꼭지점
+	Point rb; //우측하단 꼭지점
 
 public:
 	Rectangle(void);
@@ -12,15 +13,15 @@ public:
 	Rectangle(Point p1, Point p2);
 
 public:
-	Point getLt(void) const;
-	Point getRb(void) const;
-	void setLt(Point lt);
-	void setRb(Point rb);
-	void show(Rectangle r);
-	int width(Rectangle r) const;
-	int height(Rectangle r);
-	int area(Rectangle r);
-	int round(Rectangle r);
+	inline Point getLt(void) const { return lt; };
+	inline Point getRb(void) const { return rb; };
+	inline void setLt(Point lt) { Rectangle::lt = lt; };
+	inline void setRb(Point rb) { Rectangle::rb = rb; };
+	void show(void);
+	inline int getWidth(void) const { return rb.getX() - lt.getX(); };
+	inline int getHeight(void) const { return rb.getY() - lt.getY(); };
+	inline int getArea(void) const { return getWidth() * getHeight(); };
+	inline int getRound(void) const { return 2 * (getWidth() + getHeight()); };
 };
 
-#endif _Rectangle_h
+#endif //_Rectangle_h
