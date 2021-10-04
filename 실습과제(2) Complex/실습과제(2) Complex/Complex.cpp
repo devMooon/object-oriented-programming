@@ -1,6 +1,14 @@
 #include <iostream>
 #include "Complex.h"
 
+Complex::Complex(void)
+	:Complex(0, 0) {};
+Complex::Complex(double real, double image)
+{
+	Complex::real = real;
+	Complex::image = image;
+};
+
 void Complex::SetComplex(double real, double image) //복소수값 설정
 {
 	Complex::real = real;
