@@ -1,7 +1,6 @@
-#include "Point.h"
-
-#ifndef _Rectangle_h
 //컴퓨터공학전공20200675문서연
+#include "Point.h"
+#ifndef _Rectangle_h
 #define _Rectangle_h
 
 class Rectangle {
@@ -9,20 +8,20 @@ class Rectangle {
 	Point rb; //우측하단 꼭지점
 
 public:
-	Rectangle(void);
-	Rectangle(int x1, int y1, int x2, int y2);
-	Rectangle(Point p1, Point p2);
+	Rectangle(int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0);
+	Rectangle(Point& p1, Point& p2) :lt(p1), rb(p2) {};
 
 public:
-	inline Point getLt(void) const { return lt; };
-	inline Point getRb(void) const { return rb; };
-	inline void setLt(Point lt) { Rectangle::lt = lt; };
-	inline void setRb(Point rb) { Rectangle::rb = rb; };
-	void show(void);
-	inline int getWidth(void) const { return rb.getX() - lt.getX(); };
-	inline int getHeight(void) const { return rb.getY() - lt.getY(); };
-	inline int getArea(void) const { return getWidth() * getHeight(); };
-	inline int getRound(void) const { return 2 * (getWidth() + getHeight()); };
-};
+	Point getLt(void) const { return lt; };
+	Point getRb(void) const { return rb; };
+	void setLt(Point lt) { this->lt = lt; };
+	void setRb(Point rb) { this->rb = rb; };
 
+	void show(void) const;
+
+	int getWidth(void) const { return rb.getX() - lt.getX(); };
+	int getHeight(void) const { return rb.getY() - lt.getY(); };
+	int getArea(void) const { return getWidth() * getHeight(); };
+	int getRound(void) const { return 2 * (getWidth() + getHeight()); };
+};
 #endif //_Rectangle_h

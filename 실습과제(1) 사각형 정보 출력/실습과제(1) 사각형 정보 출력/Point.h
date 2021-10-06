@@ -7,15 +7,13 @@ class Point {
 	int y;
 
 public:
-	Point(void);
-	Point(int x, int y);
+	Point(int x = 0, int y = 0) : x(x), y(y) {};
 
 public:
-	inline int getX(void) const { return x; };
-	inline int getY(void) const { return y; };
+	int getX(void) const { return x; };
+	int getY(void) const { return y; };
 	void setX(int x);
 	void setY(int y);
 	void show(void) const;
 };
-
 #endif //_Point_h
