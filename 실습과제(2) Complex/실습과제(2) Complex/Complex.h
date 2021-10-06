@@ -5,18 +5,16 @@
 class Complex {
 	double real; //실수부값
 	double image; //허수부값
+
 public:
-	inline void SetComplex(double real, double image)
-	{
-		Complex::real = real;
-		Complex::image = image;
-	}; //복소수값 설정
-	inline double GetReal(void) const { return real; }; //실수부값 반환
-	inline double GetImage(void) const { return image; }; //허수부값 반환
-	void ShowComplex(void); //복소수값 출력
-public:
-	Complex(void);
-	Complex(double real, double image);
+	Complex(double real = 0, double image = 0);
+
+	void SetComplex(double real, double image); //복소수값 설정
+	void ShowComplex(void) const; //복소수값 출력
+
+	double GetReal(void) const { return real; }; //실수부값 반환
+	double GetImage(void) const { return image; }; //허수부값 반환
+	
 };
 
 #endif // !_Complex_h

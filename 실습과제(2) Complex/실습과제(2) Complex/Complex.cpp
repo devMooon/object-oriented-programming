@@ -2,15 +2,17 @@
 #include <iostream>
 #include "Complex.h"
 
-Complex::Complex(void)
-	:Complex(0, 0) {};
 Complex::Complex(double real, double image)
 {
-	Complex::real = real;
-	Complex::image = image;
+	this->real = real;
+	this->image = image;
 };
-
-void Complex::ShowComplex(void) //복소수값 출력
+void Complex::SetComplex(double real, double image)
+{
+	this->real = real;
+	this->image = image;
+};
+void Complex::ShowComplex(void) const
 {
 	std::cout << std::endl << "***복소수값 출력***" << std::endl;
 	std::cout << GetReal() << " + " << GetImage() << "i" << std::endl << std::endl;
