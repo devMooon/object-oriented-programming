@@ -2,9 +2,6 @@
 #include "Child.h"
 #include <iostream>
 
-Child::Child(void)
-	:Child(0) {};
-
 Child::Child(int bead) 
 {
 	if (setBead(bead)) {}
@@ -18,13 +15,9 @@ bool Child::setBead(int bead)
 		return false;
 	}
 	else {
-		Child::bead = bead;
+		this->bead = bead;
 		return true;
 	}
-};
-void Child::showInfo(void) const
-{
-	std::cout << "구슬 개수 : " << bead << std::endl;
 };
 void Child::win(Child *loser, int bead)
 {
@@ -38,8 +31,4 @@ void Child::win(Child *loser, int bead)
 		loser->setBead(0);
 	}
 	setBead(getBead() + beadNum);
-};
-void Child::lose(Child *winner, int bead)
-{
-	winner->win(this, bead);
 };
