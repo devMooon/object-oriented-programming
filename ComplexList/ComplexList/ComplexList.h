@@ -18,14 +18,14 @@ public:
 		delete[] cl;
 	}
 	//멤버함수
+	int getSize(void) const { return size; };
+	void setSize(int n) { this->size = size; };
+
 	void Set(int n, double r, double i);
-	Complex& Get(int n);
-	Complex* pGet(int n);
-	int Length();
+
+	Complex& Get(int n)const { return cl[n]; };
+	Complex* pGet(int n) const { return &cl[n]; };
+	int Length() { return getSize(); };
+	void modifySize(int n);
 };
 #endif // !_COMPLEXLIST_H
-
-//배열을 하나 더 만든다.
-//작은 배열의 값을 하나씩 복사한다.
-//작은 배열을 할당 해제한다.
-//plist가 큰 배열을 가리킨다.

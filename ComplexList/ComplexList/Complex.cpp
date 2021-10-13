@@ -15,6 +15,13 @@ void Complex::ShowComplex(void) const
 	if (real == 0 && image == 0) {
 		std::cout << 0;
 	}
-	std::cout << real << " + " << image << "i" << std::endl; 
-
+	else if (real == 0) {
+		std::cout << image << "i" << std::endl;
+	}
+	else if (image == 0) {
+		std::cout << real << std::endl;
+	}
+	else {
+		std::cout << real << " + " << image << "i" << std::endl;
+	}
 };

@@ -26,12 +26,18 @@ int main(void)
 	ComplexList cl2(5);
 
 	//배열 객체 초기화
-	for (int i = 0; i < cl1.Length(); i++) {
+	int repeat = cl1.Length() + 5;
+	for (int i = 0; i < repeat; i++) {
 		cl1.Set(i, 0, 0);
 	}
-	for (int i = 0; i < cl2.Length(); i++) {
+
+	repeat = cl2.Length() + 5;
+	for (int i = 0; i < repeat; i++) {
 		cl2.Set(i, 5, 5);
 	}
+	
+
+
 
 	//배열의 요소 출력
 	std::cout << "cl1의 요소 값 출력...\n";
@@ -40,6 +46,7 @@ int main(void)
 		cl1.Get(i).ShowComplex();
 		std::cout << std::endl;
 	}
+
 	std::cout << "cl2의 요소 값 출력...\n";
 	for (int i = 0; i < cl2.Length(); i++) {
 		std::cout << i << "번 : ";

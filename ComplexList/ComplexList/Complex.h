@@ -7,8 +7,7 @@ class Complex {
 	double image;
 
 public:
-	inline Complex() :real(0), image(0) {};
-	inline Complex(double real, double image) :real(real), image(image) {};
+	inline Complex(double real = 0, double image = 0) :real(real), image(image) {};
 
 	void SetComplex(double real, double image);
 
