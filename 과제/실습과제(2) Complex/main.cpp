@@ -1,4 +1,4 @@
-//컴퓨터공학전공 20200675 문서연
+ㄴ//컴퓨터공학전공 20200675 문서연
 #include <iostream>
 #include "Complex.h"
 
