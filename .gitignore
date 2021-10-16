@@ -1123,3 +1123,22 @@ First Class/Debug/Fruit_Sales.tlog/link.write.1.tlog
 실습과제(3) 구슬치기 시뮬레이션/실습과제(3) 구슬치기 시뮬레이션/Debug/실습과제(3) .01fd5206.tlog/link.read.1.tlog
 실습과제(3) 구슬치기 시뮬레이션/실습과제(3) 구슬치기 시뮬레이션/Debug/실습과제(3) .01fd5206.tlog/link.write.1.tlog
 실습과제(3) 구슬치기 시뮬레이션/실습과제(3) 구슬치기 시뮬레이션/Debug/실습과제(3) .01fd5206.tlog/실습과제(3) 구슬치기 시뮬레이션.lastbuildstate
+*.sln
+*.suo
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+*.exe
+*.pdb
+*.vcxproj
+*.filters
+*.user
+*.obj
+*.idb
+*.recipe
+*.ilk
+*.log
+*.tlog
+*.lastbuildstate
