@@ -8,11 +8,11 @@ int main(void)
 
 	//배열 객체 초기화
 	for (int i = 0; i < cl1.length(); i++) {
-		cl1.setComplex((i + 1), (i + 1) * 10, i);		
+		cl1.setComplex(i, (i + 1), (i + 1) * 10);		
 	}
 
 	for (int i = 0; i < cl2.length(); i++) {
-		cl2.setComplex((i + 1) * 10, (i + 1) * 10 + 5, i);
+		cl2.setComplex(i, (i + 1) * 10, (i + 1) * 10 + 5);
 	}
 
 	//배열의 요소 출력

@@ -16,4 +16,6 @@ int main(void)
 	cout << "³ÐÀÌ: " << r.getArea() << endl;
 	cout << "µÑ·¹: " << r.getPerimeter() << endl;
 
+	int* numbers = new int[10];
+	numbers[0] = 1;
 }
