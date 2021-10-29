@@ -1,11 +1,7 @@
-chapter1/add.cpp
 chapter1/chapter1.sln
 chapter1/chapter1.vcxproj
 chapter1/chapter1.vcxproj.filters
 chapter1/chapter1.vcxproj.user
-chapter1/me.cpp
-chapter1/name.cpp
-chapter1/tree.cpp
 chapter1/.vs/chapter1/v16/.suo
 chapter1/.vs/chapter1/v16/Browse.VC.db
 chapter2/.vs/chapter2/v16/.suo
@@ -1144,3 +1140,14 @@ First Class/Debug/Fruit_Sales.tlog/link.write.1.tlog
 *.lastbuildstate
 *.pdf
 *.txt
+mid/20200675-문서연.zip
+mid/20200675-문서연/main.cpp
+mid/20200675-문서연/Schedule.cpp
+mid/20200675-문서연/Schedule.h
+mid/20200675-문서연/Time.cpp
+mid/20200675-문서연/Time.h
+mid/mid-exam/main.cpp
+mid/mid-exam/Schedule.cpp
+mid/mid-exam/Schedule.h
+mid/mid-exam/Time.cpp
+mid/mid-exam/Time.h
