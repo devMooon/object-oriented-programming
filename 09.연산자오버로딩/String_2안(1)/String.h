@@ -10,7 +10,7 @@ private:
 	char* m_pStr; //동적으로 생성된 문자열을 가리킴
 
 public:
-	String() :String("") {};
+	String();
 	String(const char* string);
 	String(const String& string);
 	~String();

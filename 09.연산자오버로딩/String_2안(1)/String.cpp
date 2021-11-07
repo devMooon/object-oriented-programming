@@ -4,37 +4,40 @@
 using std::cout;
 using std::endl;
 
-String::String(const char* string) 
-{ 
-	cout << "생성자 호출" << endl;
+String::String()
+{
+	this->m_nLen = 0;
+	this->m_pStr = NULL;
+}
+String::String(const char* string)
+{
 	int i;
 	int size;
 	for (size = 0; string[size] != '\0'; size++);
-	size++;
 
-	m_pStr = new char[size];
+	m_pStr = new char[size + 1];
 	m_nLen = size;
-	for (i = 0; i < size; i++){
+	for (i = 0; i < size + 1; i++) {
 		m_pStr[i] = string[i];
-	}	
+	}
 }
 String::String(const String& string)
 {
-	cout << "복사 생성자 호출" << endl;
-
 	int i;
-	int size = string.length();
-	this->m_pStr = new char[size];
+	int size = string.m_nLen;
+
+	this->m_pStr = new char[size + 1];
 	this->m_nLen = size;
 
-	for (i = 0; i < size; i++) {
+	for (i = 0; i < size + 1; i++) {
 		this->m_pStr[i] = string.m_pStr[i];
 	}
 }
+
 String::~String()
 {
-	cout << "소멸자 호출" << endl;
-	delete[] m_pStr;
+	if (m_pStr != NULL)
+		delete[] m_pStr;
 }
 int String::length(void) const
 {
@@ -42,9 +45,12 @@ int String::length(void) const
 }
 ostream& operator<<(ostream& os, const String& rightHand)
 {
-	os << rightHand.m_pStr;
-	return os;
+	if (rightHand.m_pStr == NULL) return os << "";
+	return os << rightHand.m_pStr;
 }
+
+
+
 char* String::operator=(const char* str)
 {
 	int i;
@@ -52,7 +58,8 @@ char* String::operator=(const char* str)
 	for (size = 0; str[size] != '\0'; size++);
 	size++;
 
-	delete[] this->m_pStr;
+	if(this->m_pStr != NULL)
+		delete[] this->m_pStr;
 	this->m_pStr = new char[size];
 	this->m_nLen = size;
 
@@ -64,18 +71,19 @@ char* String::operator=(const char* str)
 }
 String String::operator+(const String str) const
 {
-	String newStr;
-	newStr.m_nLen = m_nLen + str.m_nLen;
-	newStr.m_pStr = new char[newStr.m_nLen];
+	char* c = new char[m_nLen + str.m_nLen + 1];
 
-	for (int i = 0; i < m_nLen - 1; i++) { //0'H' 1'E' 2'L' 3'L' 4'O'
-		newStr.m_pStr[i] = m_pStr[i];
+	for (int i = 0; i < m_nLen; i++) {//0'H' 1'E' 2'L' 3'L' 4'O'
+		c[i] = m_pStr[i];
 	}
-	for (int i = 0; i < str.m_nLen; i++) {//0'H' 1'E' 2'L' 3'L' 4'O' 5'\0'
-		newStr.m_pStr[m_nLen - 1 + i] = str.m_pStr[i];
+	for (int i = 0; i < str.m_nLen + 1; i++) {//0'H' 1'E' 2'L' 3'L' 4'O' 5'\0'
+		c[m_nLen + i] = str.m_pStr[i];
 	}
 
-	return newStr;
+	String temp(c);
+	delete[] c;
+
+	return temp;
 }
 bool String::operator==(const String str)const
 {
@@ -83,7 +91,7 @@ bool String::operator==(const String str)const
 	for (int i = 0; i < m_nLen; i++) {
 		if (m_pStr[i] != str.m_pStr[i]) return false;
 	}
-	return true;	
+	return true;
 }
 bool String::operator==(const char* str)const
 {
