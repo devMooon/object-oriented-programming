@@ -12,6 +12,7 @@ protected:
 	int balance;
 
 public:
+	Account() {};
 	Account(int accountNo, string name, int balance);
 
 	virtual void deposit(int amount);

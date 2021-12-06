@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "AccountList.h"
 #include "Account.h"
 #include "CheckingAccount.h"
 #include "CheckingTrafficCardAccount.h"
@@ -14,45 +15,39 @@ const int size = 10;
 
 int main(void)
 {
-	Account* account[size];
-	for (int i = 0; i < size; i++) {
-		account[i] = NULL;
-	}
+	AccountList accounts(10);
 
-	account[0] = new BonusPointAccount(100, "Moon", 100);
-	account[1] = new CheckingAccount(200, "Moon2", 200, "000");
-	account[2] = new CheckingTrafficCardAccount(300, "Moon3", 300, "001", false);
-	account[3] = new CreditLineAccount(400, "Moon4", 400, 1000);
+	BonusPointAccount* bpa1 = new BonusPointAccount(100, "Moon", 100);
+	CheckingAccount* ca = new CheckingAccount(200, "Moon2", 200, "000");
+	CheckingTrafficCardAccount* cta = new CheckingTrafficCardAccount(300, "Moon3", 300, "001", false);
+	CreditLineAccount* cla = new CreditLineAccount(400, "Moon4", 400, 1000);
+	BonusPointAccount* bpa2 = new BonusPointAccount(100, "Moon", 100);
+
+	accounts.push(bpa1);
+	accounts.push(ca);
+	accounts.push(cta);
+	accounts.push(cla);
+	accounts.push(bpa2);
 	
-	
-	for (int i = 0; i < size; i++) {
-		if (account[i] != NULL) {
-			cout << i << "번 Test" << endl;
-			account[i]->deposit(-1);
-			account[i]->deposit(10000);
-			account[i]->withdraw(-100);
-			account[i]->withdraw(11000);
-			account[i]->withdraw(3000);
-			account[i]->check();
+	for (int i = 0; i < accounts.realSize; i++) {
+		cout << i << "번 Test" << endl;
+		accounts[i].deposit(-1);
+		accounts[i].deposit(10000);
+		accounts[i].withdraw(-100);
+		accounts[i].withdraw(11000);
+		accounts[i].withdraw(3000);
+		accounts[i].check();
+		cout << endl;
+
+		CheckingAccount* ca = dynamic_cast<CheckingAccount*>(&accounts[i]);
+		if (ca != NULL) {
+			cout << "CheckingAccount 객체 입니다" << endl;
+			ca->pay("001", 5000);
+			ca->pay("000", 5000);
+			ca->check();
 			cout << endl;
-
-			CheckingAccount* ca = dynamic_cast<CheckingAccount*>(account[i]);
-			if (ca != NULL) {
-				cout << "CheckingAccount 객체 입니다" << endl;
-				ca->pay("001", 5000);
-				ca->pay("000", 5000);
-				ca->check();
-				cout << endl;
-			}
 		}
 	}
 
-	for (int i = 0; i < size; i++) {
-		if (account[i] != NULL) {
-			cout << i << "번 동적할당해제" << endl;
-			delete account[i];
-		}
-	}
-	
 	return 0;
 }
